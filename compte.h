@@ -11,7 +11,7 @@ private:
     Utilisateur user;
 
 public:
-    Compte();
+    Compte(std::string log, std::string pass, Utilisateur u);
 };
 
 #endif // COMPTE_H

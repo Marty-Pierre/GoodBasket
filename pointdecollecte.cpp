@@ -1,6 +1,6 @@
 #include "pointdecollecte.h"
 
-PointDeCollecte::PointDeCollecte()
+PointDeCollecte::PointDeCollecte(std::string l) : lieu(l)
 {
 
 }

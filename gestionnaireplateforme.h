@@ -6,7 +6,7 @@
 class GestionnairePlateforme : public Utilisateur
 {
 public:
-    GestionnairePlateforme();
+    GestionnairePlateforme(std::string n, std::string pren, std::vector<PointDeCollecte> pc);
 };
 
 #endif // GESTIONNAIREPLATEFORME_H

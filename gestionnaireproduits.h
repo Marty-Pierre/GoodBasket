@@ -1,6 +1,8 @@
 #ifndef GESTIONNAIREPRODUITS_H
 #define GESTIONNAIREPRODUITS_H
 
+#include <vector>
+#include "produit.h"
 
 class GestionnaireProduits
 {
@@ -9,8 +11,8 @@ private:
 public:
     GestionnaireProduits();
     bool verificationValeurs(std::string quantite, int prix);
-    Produits getProd(std::string nomProduit);
-    void ajouterProduit(Produit prod);
+    Produit getProd(std::string nomProduit);
+    void ajouterProduit(Produit prod) { produits.push_back(prod); };
 };
 
 #endif // GESTIONNAIREPRODUITS_H

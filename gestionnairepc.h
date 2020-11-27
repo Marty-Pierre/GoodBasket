@@ -9,7 +9,7 @@ class GestionnairePC : public Utilisateur
 private:
     std::vector<PointDeCollecte> pcGeres;
 public:
-    GestionnairePC();
+    GestionnairePC(std::string n, std::string pren, std::vector<PointDeCollecte> pc, std::vector<PointDeCollecte> pcg); 
 };
 
 #endif // GESTIONNAIREPC_H
