@@ -1,8 +1,9 @@
 #ifndef GESTIONNAIREPLATEFORME_H
 #define GESTIONNAIREPLATEFORME_H
 
+#include "utilisateur.h"
 
-class GestionnairePlateforme
+class GestionnairePlateforme : public Utilisateur
 {
 public:
     GestionnairePlateforme();
