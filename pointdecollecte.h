@@ -5,7 +5,7 @@
 #include "Produit.h"
 #include "gestionnaireproduits.h"
 
-class Utilisateur; class GestionnairePC; class Producteur;
+class Utilisateur; class GestionnairePC; class Producteur; class Application;
 
 /** @brief La classe PointDeCollecte.
  ** 
@@ -28,6 +28,7 @@ public:
     ///
     /// @param l lieux du point de collecte
     PointDeCollecte(std::string l);
+    std::string getLocation() { return lieu; };
 };
 
 #endif // POINTDECOLLECTE_H

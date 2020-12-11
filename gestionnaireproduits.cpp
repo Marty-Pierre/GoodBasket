@@ -23,14 +23,16 @@ bool GestionnaireProduits::verificationValeurs(string quantite, int prix) {
 /// @param nomProduit nom du @ref Produit recherché
 ///
 /// @return le @ref Produit si il est présent dans le gestionnaire ou un @ref Produit érroné sinon
-Produit GestionnaireProduits::getProd(string nomProduit) {
-    Produit p = Produit(string("erreur"), string(""), -1);
-    vector<Produit>::iterator pi = produits.begin();
+Produit& GestionnaireProduits::getProd(string nomProduit) {
+    Produit* error = new Produit(string("erreur"), string(""), -1);
+    Produit& p = *error; 
+    vector<Produit&>::iterator pi = produits.begin();
     while (pi != produits.end()) {
-        if ( pi->getName() != nomProduit)
+        if ( (*pi)->getName() != nomProduit)
             pi = next(pi);
         else {
             p = *pi;
+            delete error;
             pi = produits.end();    
         }
     }

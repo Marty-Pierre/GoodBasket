@@ -18,7 +18,7 @@ class PointDeCollecte; class Producteur; class Utilisateur;
 class GestionnaireProduits
 {
 private:
-    std::vector<Produit> produits;
+    std::vector<Produit&> produits;
 public:
     /// @brief Le constructeur par défaut.
     ///
@@ -36,7 +36,7 @@ public:
     /// @param nomProduit nom du @ref Produit recherché
     ///
     /// @return le @ref Produit si il est présent dans le gestionnaire ou un @ref Produit érroné sinon
-    Produit getProd(std::string nomProduit);
+    Produit& getProd(std::string nomProduit);
     /// @brief Ajoute le @ref Produit spécifié dans la liste du gestionnaire.
     ///
     /// @param prod @ref Produit à ajouter à la liste
