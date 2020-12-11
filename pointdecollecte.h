@@ -18,7 +18,7 @@ class Utilisateur; class GestionnairePC; class Producteur;
 class PointDeCollecte
 {
 private:
-    std::string lieu;
+    const std::string lieu;
     GestionnaireProduits produitsDuPC;
     bool ouvert;
 public:

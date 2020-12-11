@@ -16,7 +16,7 @@ class Compte
 private:
     std::string login;
     std::string password;
-    Utilisateur user;
+    const Utilisateur& user;
 
 public:
     /// @brief Le constructeur par défaut attribue les valeurs passée en paramètre.
@@ -26,7 +26,7 @@ public:
     /// @param log login de l'utilisateur
     /// @param pass mot de passe de l'utilisateur
     /// @param u @ref Utilisateur à associé à ce compte
-    Compte(std::string log, std::string pass, Utilisateur u);
+    Compte(std::string log, std::string pass, Utilisateur& u);
 };
 
 #endif // COMPTE_H

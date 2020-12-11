@@ -7,7 +7,7 @@
 /// @param log login de l'utilisateur
 /// @param pass mot de passe de l'utilisateur
 /// @param u Utilisateur à associé à ce compte
-Compte::Compte(std::string log, std::string pass, Utilisateur u) : login(log), password(pass), user(u)
+Compte::Compte(std::string log, std::string pass, Utilisateur& u) : login(log), password(pass), user(u)
 {
 
 }

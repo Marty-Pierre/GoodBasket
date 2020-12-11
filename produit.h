@@ -17,7 +17,7 @@ class Utilisateur; class GestionnaireProduits; class PointDeCollecte; class Prod
 class Produit
 {
 private:
-    std::string nom;
+    const std::string nom;
     std::string quantite;
     int prix;
 public:
