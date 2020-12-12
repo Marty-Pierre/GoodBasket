@@ -15,17 +15,16 @@ Application::Application()
 ///
 /// @return le @ref PointDeCollecte si il est présent dans le gestionnaire ou un @ref PointDeCollecte érroné sinon
 PointDeCollecte& Application::getPC(string lieu) {
-    PointDeCollecte* error = new PointDeCollecte(string("erreur"));
-    PointDeCollecte pc = *error;
+    PointDeCollecte* pc = new PointDeCollecte(string("erreur"));
     vector<PointDeCollecte>::iterator pi = pcc.begin();
     while (pi != pcc.end()) {
-        if ( (*pi)->getLocation() != lieu)
+        if ( pi->getLocation() != lieu)
             pi = next(pi);
         else {
-            pc = *pi;
-            delete error;
+            delete pc;
+            pc = &*pi;
             pi = pcc.end();    
         }
     }
-    return pc;
+    return *pc;
 }
