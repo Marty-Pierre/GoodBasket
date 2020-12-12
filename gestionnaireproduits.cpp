@@ -26,7 +26,7 @@ bool GestionnaireProduits::verificationValeurs(string quantite, int prix) {
 Produit& GestionnaireProduits::getProd(string nomProduit) {
     Produit* error = new Produit(string("erreur"), string(""), -1);
     Produit& p = *error; 
-    vector<Produit&>::iterator pi = produits.begin();
+    vector<Produit>::iterator pi = produits.begin();
     while (pi != produits.end()) {
         if ( (*pi)->getName() != nomProduit)
             pi = next(pi);

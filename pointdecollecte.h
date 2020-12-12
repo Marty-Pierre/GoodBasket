@@ -2,7 +2,7 @@
 #define POINTDECOLLECTE_H
 
 #include <vector>
-#include "Produit.h"
+#include "produit.h"
 #include "gestionnaireproduits.h"
 
 class Utilisateur; class GestionnairePC; class Producteur; class Application;

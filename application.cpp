@@ -17,7 +17,7 @@ Application::Application()
 PointDeCollecte& Application::getPC(string lieu) {
     PointDeCollecte* error = new PointDeCollecte(string("erreur"));
     PointDeCollecte pc = *error;
-    vector<PointDeCollecte&>::iterator pi = pcc.begin();
+    vector<PointDeCollecte>::iterator pi = pcc.begin();
     while (pi != pcc.end()) {
         if ( (*pi)->getLocation() != lieu)
             pi = next(pi);

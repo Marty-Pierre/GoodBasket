@@ -18,7 +18,7 @@ class PointDeCollecte; class Producteur; class Utilisateur;
 class GestionnaireProduits
 {
 private:
-    std::vector<Produit&> produits;
+    std::vector<Produit> produits;
 public:
     /// @brief Le constructeur par défaut.
     ///

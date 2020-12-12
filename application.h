@@ -7,7 +7,7 @@
 class Application
 {
 private:
-    std::vector<PointDeCollecte&> pcc;
+    std::vector<PointDeCollecte> pcc;
 
 public:
     Application();
