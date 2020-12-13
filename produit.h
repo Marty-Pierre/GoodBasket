@@ -41,6 +41,25 @@ public:
     ///
     /// @return le nom du produit
     std::string getName() { return nom; };
+
+    ///@brief La fonction qui verifie si deux produit sont egaux
+    ///
+    ///@param prod Le produit avec lequel il faut comparer
+    bool isEqual(Produit prod);
+
+    ///@brief La fonction qui donne la quantite du produit
+    ///
+    ///@return La quantite du produit
+    std::string getQuantite(){
+        return quantite;
+    }
+
+    ///@brief La fonction qui donne le prix du produit
+    ///
+    ///@return Le prix du produit
+    int getPrix(){
+        return prix;
+    }
 };
 
 #endif // PRODUIT_H

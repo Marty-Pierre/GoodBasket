@@ -2,6 +2,9 @@
 #include <QQmlApplicationEngine>
 #include <iostream>
 
+#include "produit.h"
+#include "gestionnaireproduits.h"
+
 using namespace std;
 
 int main(int argc, char *argv[])
@@ -18,3 +21,4 @@ int main(int argc, char *argv[])
     return app.exec();*/
     cout << "Test du main\n";
 }
+
