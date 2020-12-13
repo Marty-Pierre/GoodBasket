@@ -4,6 +4,7 @@
 
 TEMPLATE = app
 TARGET = GoodBasket
+QT += qml
 INCLUDEPATH += .
 
 # The following define makes your compiler warn you if you use any

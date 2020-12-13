@@ -12,10 +12,10 @@ MAKEFILE      = Makefile
 
 CC            = gcc
 CXX           = g++
-DEFINES       = -DQT_DEPRECATED_WARNINGS -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_CORE_LIB
+DEFINES       = -DQT_DEPRECATED_WARNINGS -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_QML_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB
 CFLAGS        = -pipe -O2 -Wall -W -D_REENTRANT -fPIC $(DEFINES)
 CXXFLAGS      = -pipe -O2 -Wall -W -D_REENTRANT -fPIC $(DEFINES)
-INCPATH       = -I. -I. -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -I. -isystem /usr/include/libdrm -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++
+INCPATH       = -I. -I. -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtQml -isystem /usr/include/x86_64-linux-gnu/qt5/QtNetwork -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -I. -isystem /usr/include/libdrm -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++
 QMAKE         = /usr/lib/qt5/bin/qmake
 DEL_FILE      = rm -f
 CHK_DIR_EXISTS= test -d
@@ -38,7 +38,7 @@ DISTNAME      = GoodBasket1.0.0
 DISTDIR = /home/marty/Documents/taf/L3/CPOA/GoodBasket/.tmp/GoodBasket1.0.0
 LINK          = g++
 LFLAGS        = -Wl,-O1
-LIBS          = $(SUBLIBS) -lQt5Gui -lQt5Core -lGL -lpthread 
+LIBS          = $(SUBLIBS) -lQt5Gui -lQt5Qml -lQt5Network -lQt5Core -lGL -lpthread 
 AR            = ar cqs
 RANLIB        = 
 SED           = sed
@@ -109,6 +109,10 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_platformcompositor_support_private.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_printsupport.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_printsupport_private.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_qml.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_qmltest.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_quick.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_quickwidgets.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_service_support_private.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_sql.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_sql_private.pri \
@@ -210,6 +214,10 @@ Makefile: GoodBasket.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++/qmake.c
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_platformcompositor_support_private.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_printsupport.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_printsupport_private.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_qml.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_qmltest.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_quick.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_quickwidgets.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_service_support_private.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_sql.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_sql_private.pri \
@@ -245,6 +253,8 @@ Makefile: GoodBasket.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++/qmake.c
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/lex.prf \
 		GoodBasket.pro \
 		/usr/lib/x86_64-linux-gnu/libQt5Gui.prl \
+		/usr/lib/x86_64-linux-gnu/libQt5Qml.prl \
+		/usr/lib/x86_64-linux-gnu/libQt5Network.prl \
 		/usr/lib/x86_64-linux-gnu/libQt5Core.prl
 	$(QMAKE) -o Makefile GoodBasket.pro
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf:
@@ -286,6 +296,10 @@ Makefile: GoodBasket.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++/qmake.c
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_platformcompositor_support_private.pri:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_printsupport.pri:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_printsupport_private.pri:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_qml.pri:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_qmltest.pri:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_quick.pri:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_quickwidgets.pri:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_service_support_private.pri:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_sql.pri:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_sql_private.pri:
@@ -321,6 +335,8 @@ Makefile: GoodBasket.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++/qmake.c
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/lex.prf:
 GoodBasket.pro:
 /usr/lib/x86_64-linux-gnu/libQt5Gui.prl:
+/usr/lib/x86_64-linux-gnu/libQt5Qml.prl:
+/usr/lib/x86_64-linux-gnu/libQt5Network.prl:
 /usr/lib/x86_64-linux-gnu/libQt5Core.prl:
 qmake: FORCE
 	@$(QMAKE) -o Makefile GoodBasket.pro
@@ -386,29 +402,29 @@ compiler_clean: compiler_moc_predefs_clean
 
 application.o: application.cpp application.h \
 		pointdecollecte.h \
-		gestionnaireproduits.h \
-		produit.h
+		produit.h \
+		gestionnaireproduits.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o application.o application.cpp
 
 compte.o: compte.cpp compte.h \
 		utilisateur.h \
 		pointdecollecte.h \
-		gestionnaireproduits.h \
-		produit.h
+		produit.h \
+		gestionnaireproduits.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o compte.o compte.cpp
 
 gestionnairepc.o: gestionnairepc.cpp gestionnairepc.h \
 		utilisateur.h \
 		pointdecollecte.h \
-		gestionnaireproduits.h \
-		produit.h
+		produit.h \
+		gestionnaireproduits.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o gestionnairepc.o gestionnairepc.cpp
 
 gestionnaireplateforme.o: gestionnaireplateforme.cpp gestionnaireplateforme.h \
 		utilisateur.h \
 		pointdecollecte.h \
-		gestionnaireproduits.h \
-		produit.h
+		produit.h \
+		gestionnaireproduits.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o gestionnaireplateforme.o gestionnaireplateforme.cpp
 
 gestionnaireproduits.o: gestionnaireproduits.cpp gestionnaireproduits.h \
@@ -419,15 +435,15 @@ main.o: main.cpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o main.cpp
 
 pointdecollecte.o: pointdecollecte.cpp pointdecollecte.h \
-		gestionnaireproduits.h \
-		produit.h
+		produit.h \
+		gestionnaireproduits.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o pointdecollecte.o pointdecollecte.cpp
 
 producteur.o: producteur.cpp producteur.h \
 		utilisateur.h \
 		pointdecollecte.h \
-		gestionnaireproduits.h \
-		produit.h
+		produit.h \
+		gestionnaireproduits.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o producteur.o producteur.cpp
 
 produit.o: produit.cpp produit.h
@@ -435,8 +451,8 @@ produit.o: produit.cpp produit.h
 
 utilisateur.o: utilisateur.cpp utilisateur.h \
 		pointdecollecte.h \
-		gestionnaireproduits.h \
-		produit.h
+		produit.h \
+		gestionnaireproduits.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o utilisateur.o utilisateur.cpp
 
 ####### Install
