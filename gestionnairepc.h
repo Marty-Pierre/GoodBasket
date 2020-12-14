@@ -25,7 +25,8 @@ public:
     /// @param pren prenom de l'utilisateur 
     /// @param pc Points de collectes aux quels l'utilisateur est abonné
     /// @param pcg Points de collectes que l'utilisateur gère
-    GestionnairePC(std::string n, std::string pren, std::vector<PointDeCollecte> pc, std::vector<PointDeCollecte> pcg); 
+    GestionnairePC(std::string n, std::string pren, std::vector<PointDeCollecte> pc, std::vector<PointDeCollecte> pcg);
+    bool modifyCycle(PointDeCollecte pdc, std::string date) { pdc.setDate(date); }; 
 };
 
 #endif // GESTIONNAIREPC_H

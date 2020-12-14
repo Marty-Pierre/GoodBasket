@@ -19,6 +19,7 @@ class PointDeCollecte
 {
 private:
     const std::string lieu;
+    std::string jourCycle;
     GestionnaireProduits produitsDuPC;
     bool ouvert;
 public:
@@ -28,6 +29,7 @@ public:
     ///
     /// @param l lieux du point de collecte
     PointDeCollecte(std::string l);
+    void setDate(std::string jour) { jourCycle = jour; };
     std::string getLocation() { return lieu; };
 };
 
