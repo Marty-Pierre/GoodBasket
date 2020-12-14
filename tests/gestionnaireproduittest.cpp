@@ -29,6 +29,16 @@ int main(int argc, char *argv[])
     }
 
     gp.ajouterProduit(p6);
-    gp.supprProduit("Razor");
-    gp.supprProduit("Pâtes");
+
+    if(gp.supprProduit("Razor");){
+        cout << "C'est good";
+    }else{
+        cout << "C'est pas good";
+    }
+
+    if(!gp.supprProduit("Pâtes");){
+        cout << "C'est good";
+    }else{
+        cout << "C'est pas good";
+    }
 }
