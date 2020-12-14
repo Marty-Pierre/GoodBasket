@@ -13,6 +13,7 @@ int main(int argc, char *argv[])
     Produit& p1 = gp.getProd(string("Snack"));
     Produit* error = new Produit(string("erreur"), string(""), -1);  
     
+    cout << "Test pour ajouterProduit (test faux qui renvoie vrai) \n";
     if(error == p1){
         cout << "C'est good";
     }else{
@@ -22,6 +23,7 @@ int main(int argc, char *argv[])
     gp.ajouterProduit(p);
     Produit& p2 = gp.getProd(string("Snack"));
 
+    cout << "Test pour ajouterProduit (test vrai qui renvoie vrai)\n";
     if(p == p2){
         cout << "C'est good";
     }else{
@@ -30,12 +32,14 @@ int main(int argc, char *argv[])
 
     gp.ajouterProduit(p6);
 
+    cout << "Test pour supprProduit (test vrai qui renvoie vrai)\n";
     if(gp.supprProduit("Razor")){
         cout << "C'est good";
     }else{
         cout << "C'est pas good";
     }
 
+    cout << "Test pour supprProduit (test faux qui renvoie vrai)\n"
     if(!gp.supprProduit("Pâtes")){
         cout << "C'est good";
     }else{
