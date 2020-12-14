@@ -1,24 +1,14 @@
-#include <QGuiApplication>
-#include <QQmlApplicationEngine>
-#include <iostream>
-
-#include "produit.h"
-#include "gestionnaireproduits.h"
+#include <QApplication>
+#include <QMainWindow>
 
 using namespace std;
 
-int main(int argc, char *argv[])
-{
-    /*QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
+int main(int argc, char *argv[]){
+    QApplication app(argc,argv);
+    QMainWindow* appli = new QMainWindow();
+    appli->show();
 
-    QGuiApplication app(argc, argv);
-
-    QQmlApplicationEngine engine;
-    engine.load(QUrl(QStringLiteral("qrc:/main.qml")));
-    if (engine.rootObjects().isEmpty())
-        return -1;
-
-    return app.exec();*/
-    cout << "Test du main\n";
+    return app.exec();
 }
+    
 

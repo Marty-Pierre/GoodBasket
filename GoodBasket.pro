@@ -4,7 +4,8 @@
 
 TEMPLATE = app
 TARGET = GoodBasket
-QT += qml
+QT += core gui
+greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 INCLUDEPATH += .
 
 # The following define makes your compiler warn you if you use any
