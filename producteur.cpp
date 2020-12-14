@@ -7,7 +7,7 @@
 /// @param n nom de l'utilisateur
 /// @param pren prenom de l'utilisateur
 /// @param pc @ref PointDeCollecte à associé à ce compte
-Producteur::Producteur(std::string n, std::string pren, std::vector<PointDeCollecte> pc) : Producteur(n, pren, pc) 
+Producteur::Producteur(std::string n, std::string pren, std::vector<PointDeCollecte> pc) : Utilisateur(n, pren, pc) 
 {
     produitsFournis = GestionnaireProduits();
 }

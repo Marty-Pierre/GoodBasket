@@ -29,6 +29,8 @@ public:
     /// @param pren prenom de l'utilisateur
     /// @param pc @ref PointDeCollecte à associé à ce compte
     Producteur(std::string n, std::string pren, std::vector<PointDeCollecte> pc);
+
+    
 };
 
 #endif // PRODUCTEUR_H

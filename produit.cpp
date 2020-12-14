@@ -23,3 +23,10 @@ void Produit::setPrix(int p) {
 void Produit::setQuantite(std::string qt) {
     this->quantite = qt;
 }
+
+///@brief La fonction qui verifie si deux produit sont egaux
+///
+///@param prod Le produit avec lequel il faut comparer
+bool Produit::isEqual(Produit prod){
+    return (this->prix == prod.getPrix() && this->nom.compare(prod.getName()) == 0 && this->quantite.compare(prod.getQuantite()) == 0);
+}
