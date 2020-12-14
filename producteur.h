@@ -29,7 +29,12 @@ public:
     /// @param pren prenom de l'utilisateur
     /// @param pc @ref PointDeCollecte à associé à ce compte
     Producteur(std::string n, std::string pren, std::vector<PointDeCollecte> pc);
-
+    /// @brief Retire le @ref Produit spécifié dans la liste du gestionnaire.
+    ///
+    /// @param prod @ref Produit à retirer de la liste
+    ///
+    /// @return si le @ref Produit à bien été retiré
+    bool supprProduit(Produit prod) {produitsFournis.supprProduit(prod);};
     
 };
 
