@@ -37,3 +37,23 @@ Produit& GestionnaireProduits::getProd(string nomProduit) {
     }
     return *p;
 }
+/// @brief Retire le @ref Produit spécifié dans la liste du gestionnaire.
+///
+/// @param prod @ref Produit à retirer de la liste
+///
+/// @return si le @ref Produit à bien été retiré
+bool GestionnaireProduits::supprProduit(Produit prod) {
+    bool res = false;
+    vector<Produit>::iterator pi = produits.begin();
+    while (pi != produits.end() && !res) {
+        if ( pi->getName() != prod.getName())
+            pi = next(pi);
+        else {
+            Produit* p = &*pi;
+            produits.erase(pi);
+            delete p;
+            res = true;   
+        }
+    }
+    return res;
+}

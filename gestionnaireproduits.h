@@ -41,6 +41,12 @@ public:
     ///
     /// @param prod @ref Produit à ajouter à la liste
     void ajouterProduit(Produit prod) { produits.push_back(prod); };
+    /// @brief Retire le @ref Produit spécifié dans la liste du gestionnaire.
+    ///
+    /// @param prod @ref Produit à retirer de la liste
+    ///
+    /// @return si le @ref Produit à bien été retiré
+    bool supprProduit(Produit prod);
 };
 
 #endif // GESTIONNAIREPRODUITS_H
