@@ -34,7 +34,7 @@ public:
     /// @param prod @ref Produit à retirer de la liste
     ///
     /// @return si le @ref Produit à bien été retiré
-    bool supprProduit(Produit prod) {produitsFournis.supprProduit(prod);};
+    bool supprProduit(std::string nomProduit) {produitsFournis.supprProduit(nomProduit);};
     
 };
 

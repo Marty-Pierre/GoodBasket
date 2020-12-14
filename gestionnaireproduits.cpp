@@ -42,11 +42,11 @@ Produit& GestionnaireProduits::getProd(string nomProduit) {
 /// @param prod @ref Produit à retirer de la liste
 ///
 /// @return si le @ref Produit à bien été retiré
-bool GestionnaireProduits::supprProduit(Produit prod) {
+bool GestionnaireProduits::supprProduit(std::string nomProduit) {
     bool res = false;
     vector<Produit>::iterator pi = produits.begin();
     while (pi != produits.end() && !res) {
-        if ( pi->getName() != prod.getName())
+        if ( pi->getName() != nomProduit)
             pi = next(pi);
         else {
             Produit* p = &*pi;
