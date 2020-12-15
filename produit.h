@@ -63,6 +63,7 @@ public:
     int getPrix(){
         return prix;
     }
+    ~Produit();
 };
 
 #endif // PRODUIT_H

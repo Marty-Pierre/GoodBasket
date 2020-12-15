@@ -49,6 +49,7 @@ public:
     ///
     /// @return True si le point de collecte n'est pas fermer
     bool pcOpen() { return (jourCycle.compare(std::string("closed")) == 0); };
+    ~PointDeCollecte();
 };
 
 #endif // POINTDECOLLECTE_H

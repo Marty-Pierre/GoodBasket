@@ -51,6 +51,7 @@ public:
     ///
     /// @return si le @ref Produit à bien été retiré
     bool supprProduit(std::string nomProduit);
+    ~GestionnaireProduits();
 };
 
 #endif // GESTIONNAIREPRODUITS_H

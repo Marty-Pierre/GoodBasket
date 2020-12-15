@@ -1,4 +1,4 @@
-#ifndef APPLICATION_H
+ï»¿#ifndef APPLICATION_H
 #define APPLICATION_H
 
 #include <vector>
@@ -6,7 +6,7 @@
 
 /** @brief La classe Application.
  ** 
- ** Elle contient un constructeur, un point de collecte et 2 méthodes pour la gérer :
+ ** Elle contient un constructeur, un point de collecte et 2 mï¿½thodes pour la gï¿½rer :
  ** @ref ajouterPc(@ref PointDeCollecte) et @ref getPC(string)
  **
  ** @version 1
@@ -20,7 +20,7 @@ private:
     std::vector<PointDeCollecte> pcc;
 
 public:
-/// @brief Le constructeur par défaut.
+/// @brief Le constructeur par dï¿½faut.
     ///
     /// Constructeur de la classe Application
     Application();
@@ -30,12 +30,14 @@ public:
     /// @param pc PointDeCollecte un point de collecte a ajouter
     void ajouterPc(PointDeCollecte pc) { pcc.push_back(pc); };
 
-   /// @brief Fonction qui donne le @ref PointDeCollecte si il est présent.
+   /// @brief Fonction qui donne le @ref PointDeCollecte si il est prÃ©sent.
    ///
-   /// @param lieu nom du @ref PointDeCollecte recherché
+   /// @param lieu nom du @ref PointDeCollecte recherchÃ©
    ///
-   /// @return le @ref PointDeCollecte si il est présent dans le gestionnaire ou un @ref PointDeCollecte érroné sinon
+   /// @return le @ref PointDeCollecte si il est prÃ©sent dans le gestionnaire ou un @ref PointDeCollecte Ã©rronÃ© sinon
    PointDeCollecte& getPC(std::string lieu);
+    PointDeCollecte& getPC(std::string lieu);
+    ~Application();
 };
 
 #endif // APPLICATION_H

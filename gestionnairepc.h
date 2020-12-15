@@ -41,6 +41,8 @@ public:
     ///
     /// @param pc PointDeCollecte le point de collecte a fermer temporairement
     void fermerPCTemp(PointDeCollecte pc) { pc.fermerPCTemp(); }; 
+    void fermerPCTemp(PointDeCollecte pc) { pc.fermerPCTemp(); };
+    ~GestionnairePC(); 
 };
 
 #endif // GESTIONNAIREPC_H

@@ -33,6 +33,7 @@ public:
     /// @param pren prenom de l'utilisateur
     /// @param pc @ref PointDeCollecte aux quels l'utilisateur est abonné
     Utilisateur(std::string n, std::string pren, std::vector<PointDeCollecte> pc);
+    ~Utilisateur();
 };
 
 #endif // UTILISATEUR_H
