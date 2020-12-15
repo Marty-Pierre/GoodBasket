@@ -36,8 +36,7 @@ public:
    ///
    /// @return le @ref PointDeCollecte si il est présent dans le gestionnaire ou un @ref PointDeCollecte érroné sinon
    PointDeCollecte& getPC(std::string lieu);
-    PointDeCollecte& getPC(std::string lieu);
-    ~Application();
+   ~Application();
 };
 
 #endif // APPLICATION_H

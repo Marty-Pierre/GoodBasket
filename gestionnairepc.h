@@ -40,7 +40,6 @@ public:
     /// @brief ferme temporairement un point de collecte en mettant sa date a FERME 
     ///
     /// @param pc PointDeCollecte le point de collecte a fermer temporairement
-    void fermerPCTemp(PointDeCollecte pc) { pc.fermerPCTemp(); }; 
     void fermerPCTemp(PointDeCollecte pc) { pc.fermerPCTemp(); };
     ~GestionnairePC(); 
 };
