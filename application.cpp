@@ -28,3 +28,7 @@ PointDeCollecte& Application::getPC(string lieu) {
     }
     return *pc;
 }
+
+Application::~Application() {
+    pcc.clear();
+}

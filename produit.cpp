@@ -30,3 +30,8 @@ void Produit::setQuantite(std::string qt) {
 bool Produit::isEqual(Produit prod){
     return (this->prix == prod.getPrix() && this->nom.compare(prod.getName()) == 0 && this->quantite.compare(prod.getQuantite()) == 0);
 }
+
+Produit::~Produit() {
+    delete &nom;
+    delete &quantite;
+}

@@ -18,7 +18,7 @@ class Utilisateur; class GestionnairePC; class Producteur; class Application;
 class PointDeCollecte
 {
 private:
-    const std::string lieu;
+    std::string lieu;
     std::string jourCycle;
     GestionnaireProduits produitsDuPC;
     bool ouvert;
@@ -31,6 +31,8 @@ public:
     PointDeCollecte(std::string l);
     void setDate(std::string jour) { jourCycle = jour; };
     std::string getLocation() { return lieu; };
+    void fermerPCTemp() { jourCycle = std::string("closed"); };
+    bool pcOpen() { return (jourCycle.compare(std::string("closed")) == 0); };
 };
 
 #endif // POINTDECOLLECTE_H

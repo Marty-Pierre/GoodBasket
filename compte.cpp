@@ -11,3 +11,9 @@ Compte::Compte(std::string log, std::string pass, Utilisateur& u) : login(log), 
 {
 
 }
+
+Compte::~Compte() {
+    delete &login;
+    delete &password;
+    delete &user;
+}

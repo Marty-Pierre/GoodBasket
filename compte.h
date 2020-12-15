@@ -16,7 +16,7 @@ class Compte
 private:
     std::string login;
     std::string password;
-    const Utilisateur& user;
+    Utilisateur& user;
 
 public:
     /// @brief Le constructeur par défaut attribue les valeurs passée en paramètre.

@@ -11,3 +11,8 @@ Producteur::Producteur(std::string n, std::string pren, std::vector<PointDeColle
 {
     produitsFournis = GestionnaireProduits();
 }
+
+Producteur::~Producteur() {  
+    pcFournis.clear();
+    delete &produitsFournis;
+}

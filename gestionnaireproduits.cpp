@@ -56,3 +56,7 @@ bool GestionnaireProduits::supprProduit(string nomProduit) {
     }
     return res;
 }
+
+GestionnaireProduits::~GestionnaireProduits() {
+    produits.clear();
+}

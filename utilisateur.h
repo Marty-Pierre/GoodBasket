@@ -19,8 +19,8 @@ class Compte; class GestionnairePlateforme;
 class Utilisateur
 {
 protected:
-    const std::string nom;
-    const std::string prenom;
+    std::string nom;
+    std::string prenom;
     std::vector<PointDeCollecte> pcInscrits;
     GestionnaireProduits panier;
 

@@ -11,3 +11,7 @@ GestionnairePlateforme::GestionnairePlateforme(std::string n, std::string pren, 
 {
 
 }
+
+GestionnairePlateforme::~GestionnairePlateforme() {
+    
+}

@@ -11,3 +11,10 @@ Utilisateur::Utilisateur(std::string n, std::string pren, std::vector<PointDeCol
 {
 
 }
+
+Utilisateur::~Utilisateur() { 
+    delete &nom; 
+    delete &prenom;
+    pcInscrits.clear();
+    delete &panier;
+}
