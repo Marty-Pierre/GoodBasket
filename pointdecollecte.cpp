@@ -7,5 +7,5 @@
 /// @param l lieux du point de collecte
 PointDeCollecte::PointDeCollecte(std::string l) : lieu(l), produitsDuPC(GestionnaireProduits())
 {
-
+    jourCycle = std::string("");
 }
