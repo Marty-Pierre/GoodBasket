@@ -29,9 +29,25 @@ public:
     ///
     /// @param l lieux du point de collecte
     PointDeCollecte(std::string l);
+
+    /// @brief Mets a jour la date du cycle
+    ///
+    /// @param jour un string pour mettre a jour la nouvelle date
     void setDate(std::string jour) { jourCycle = jour; };
+
+    /// @brief Recupere le lieu du point de collecte
+    ///
+    /// @return le lieu du point de collecte
     std::string getLocation() { return lieu; };
+
+    /// @brief ferme temporairement un point de collecte en mettant sa date a FERME 
+    ///
+    /// @param pc PointDeCollecte le point de collecte a fermer temporairement
     void fermerPCTemp() { jourCycle = std::string("closed"); };
+
+    /// @brief Regarde si le point de collecte n'est pas fermer
+    ///
+    /// @return True si le point de collecte n'est pas fermer
     bool pcOpen() { return (jourCycle.compare(std::string("closed")) == 0); };
 };
 

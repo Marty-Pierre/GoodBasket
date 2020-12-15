@@ -9,6 +9,7 @@ GestionnaireProduits::GestionnaireProduits()
 {
 
 }
+
 /// @brief Vérifie si les valeurs données sont correctes.
 ///
 /// @param quantite string décrivant la quantite du @ref Produit
@@ -18,6 +19,7 @@ GestionnaireProduits::GestionnaireProduits()
 bool GestionnaireProduits::verificationValeurs(string quantite, int prix) {
     return prix > 0;
 }
+
 /// @brief Fonction qui donne le @ref Produit si il est présent.
 ///
 /// @param nomProduit nom du @ref Produit recherché
@@ -37,6 +39,7 @@ Produit& GestionnaireProduits::getProd(string nomProduit) {
     }
     return *p;
 }
+
 /// @brief Retire le @ref Produit spécifié dans la liste du gestionnaire.
 ///
 /// @param prod @ref Produit à retirer de la liste
