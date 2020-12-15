@@ -33,6 +33,7 @@ public:
     std::string getLocation() { return lieu; };
     void fermerPCTemp() { jourCycle = std::string("closed"); };
     bool pcOpen() { return (jourCycle.compare(std::string("closed")) == 0); };
+    ~PointDeCollecte();
 };
 
 #endif // POINTDECOLLECTE_H

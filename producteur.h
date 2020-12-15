@@ -35,7 +35,7 @@ public:
     ///
     /// @return si le @ref Produit à bien été retiré
     bool supprProduit(std::string nomProduit) {produitsFournis.supprProduit(nomProduit);};
-    
+    ~Producteur();
 };
 
 #endif // PRODUCTEUR_H

@@ -27,6 +27,7 @@ public:
     /// @param pass mot de passe de l'utilisateur
     /// @param u @ref Utilisateur à associé à ce compte
     Compte(std::string log, std::string pass, Utilisateur& u);
+    ~Compte();
 };
 
 #endif // COMPTE_H

@@ -28,7 +28,8 @@ public:
     GestionnairePC(std::string n, std::string pren, std::vector<PointDeCollecte> pc, std::vector<PointDeCollecte> pcg);
     bool modifyCycle(PointDeCollecte pdc, std::string date) { pdc.setDate(date); };
     void fermerPCDef(PointDeCollecte pc);
-    void fermerPCTemp(PointDeCollecte pc) { pc.fermerPCTemp(); }; 
+    void fermerPCTemp(PointDeCollecte pc) { pc.fermerPCTemp(); };
+    ~GestionnairePC(); 
 };
 
 #endif // GESTIONNAIREPC_H

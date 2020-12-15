@@ -13,6 +13,7 @@ public:
     Application();
     void ajouterPc(PointDeCollecte pc) { pcc.push_back(pc); };
     PointDeCollecte& getPC(std::string lieu);
+    ~Application();
 };
 
 #endif // APPLICATION_H
