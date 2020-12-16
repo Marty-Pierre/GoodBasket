@@ -8,7 +8,7 @@
 #include "message.h"
 #include "application.h"
 
-class Compte; class GestionnairePlateforme; class Application;
+class Compte; class GestionnairePlateforme; class Application; class Message;
 
 /** @brief La classe Utilisateur.
  ** 
@@ -26,7 +26,7 @@ protected:
     std::vector<PointDeCollecte> pcInscrits;
     GestionnaireProduits panier;
     std::vector<Message> msgRecus;
-    Application goodBasket;
+    Application *goodBasket;
 
 public:
     /// @brief Le constructeur par défaut attribue les valeurs passée en paramètre.
@@ -39,7 +39,7 @@ public:
     Utilisateur(std::string n, std::string pren, std::vector<PointDeCollecte> pc, Application app);
     std::string getNom() { return nom; };
     void envoyerMessage(Message m);
-    void recevoirMessage(Message m) { msgRecus.push_back(m); };
+    void recevoirMessage(Message* m) { msgRecus.push_back(*m); };
     void removeMessage(Message m);
     ~Utilisateur();
 };

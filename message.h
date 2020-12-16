@@ -18,12 +18,12 @@ class Message
 private:
     std::string lieu;
     std::string message;
-    Utilisateur & destinataire; Utilisateur & expediteur;
+    Utilisateur* destinataire; Utilisateur* expediteur;
 
 public:
     Message(Utilisateur expe, Utilisateur deste, std::string location, std::string content);
-    Utilisateur getDestinataire() { return destinataire; };
-    Utilisateur getExpediteur() { return expediteur; };
+    Utilisateur* getDestinataire() { return destinataire; };
+    Utilisateur* getExpediteur() { return expediteur; };
     std::string getLieu() { return lieu; };
 };
 

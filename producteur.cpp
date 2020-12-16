@@ -14,7 +14,7 @@ Producteur::Producteur(std::string n, std::string pren, std::vector<PointDeColle
 
 void Producteur::repondreMessage(Message m, bool accept) {
     if (accept) {
-        PointDeCollecte pc = goodBasket.getPC(m.getLieu());
+        PointDeCollecte pc = goodBasket->getPC(m.getLieu());
         pcFournis.push_back(pc);
     }
     removeMessage(m);

@@ -37,7 +37,7 @@ public:
     /// @brief Ajoute un utilisateur a l'application
     ///
     /// @param user @ref Utilisateur un utilisateur a ajouter
-    void ajouterUtilisateur(Utilisateur user) { utilisateurs.push_back(user); };
+    void ajouterUtilisateur(Utilisateur *user) { utilisateurs.push_back(*user); };
 
    /// @brief Fonction qui donne le @ref PointDeCollecte si il est présent.
    ///
