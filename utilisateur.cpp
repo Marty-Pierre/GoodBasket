@@ -14,10 +14,16 @@ Utilisateur::Utilisateur(string n, string pren, vector<PointDeCollecte> pc, Appl
 
 }
 
+/// @brief Fonction qui envoie a un Utilisateur
+///
+/// @param m Message le message a envoyé
 void Utilisateur::envoyerMessage(Message m) {
     m.getDestinataire()->recevoirMessage(&m);
 }
 
+/// @brief Fonction qui supprime le message
+///
+/// @param m Message le message a supprimer
 void Utilisateur::removeMessage(Message m) {
     vector<Message>::iterator pi = msgRecus.begin();
     while (pi != msgRecus.end()) {

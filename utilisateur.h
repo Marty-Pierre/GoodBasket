@@ -38,8 +38,20 @@ public:
     /// @param pc @ref PointDeCollecte aux quels l'utilisateur est abonné
     Utilisateur(std::string n, std::string pren, std::vector<PointDeCollecte> pc, Application app);
     std::string getNom() { return nom; };
+
+    /// @brief Fonction qui envoie a un Utilisateur
+    ///
+    /// @param m Message le message a envoyé
     void envoyerMessage(Message m);
+
+    /// @brief Fonction qui mets un message dans la liste
+    ///
+    /// @param m Message le message a ajouter a la liste
     void recevoirMessage(Message* m) { msgRecus.push_back(*m); };
+
+    /// @brief Fonction qui supprime le message
+    ///
+    /// @param m Message le message a supprimer
     void removeMessage(Message m);
     ~Utilisateur();
 };

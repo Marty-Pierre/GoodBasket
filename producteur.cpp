@@ -12,6 +12,11 @@ Producteur::Producteur(std::string n, std::string pren, std::vector<PointDeColle
     produitsFournis = GestionnaireProduits();
 }
 
+    /// @brief Fonction qui reponds si le producteur est d'accord d'etre fournisseur
+    ///
+    /// @param m Message le message a supprimer
+    ///
+    ///@return true si il accepte false sinon
 void Producteur::repondreMessage(Message m, bool accept) {
     if (accept) {
         PointDeCollecte pc = goodBasket->getPC(m.getLieu());
