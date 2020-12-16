@@ -28,15 +28,18 @@ public:
     /// @param nomProduit nom du produit
     /// @param qt quantité du produit
     /// @param p prix du produit
+
     Produit(std::string nomProduit, std::string qt, int p);
     /// @brief La fonction qui change le prix.
     ///
     /// @param p p nouveau prix du produit
     void setPrix(int p);
+
     /// @brief La fonction qui change la quantite.
     ///
     /// @param qt p nouveau prix du produit
     void setQuantite(std::string qt);
+
     /// @brief La fonction qui donne le nom du produit.
     ///
     /// @return le nom du produit
