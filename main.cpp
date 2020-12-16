@@ -15,7 +15,7 @@ int main(int argc, char *argv[]){
 
     PointDeCollecte *p1 = new PointDeCollecte(string("Paris"));
     vector<PointDeCollecte> pdc;
-    cout << p1->getLocation() + "\n";
+    cout << "Ca marche 1\n";
     pdc.push_back(*p1);
 
     GestionnairePC *gest = new GestionnairePC("Bove","Jose",pdc,pdc);
