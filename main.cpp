@@ -13,14 +13,13 @@ int main(int argc, char *argv[]){
     QMainWindow* appli = new QMainWindow();
     appli->show();**/
 
-    PointDeCollecte *p1 = new PointDeCollecte("Paris");
+    PointDeCollecte *p1 = new PointDeCollecte(string("Paris"));
     vector<PointDeCollecte> pdc;
+    cout << p1->getLocation() + "\n";
     pdc.push_back(*p1);
 
     GestionnairePC *gest = new GestionnairePC("Bove","Jose",pdc,pdc);
-    //cout << pdc.size();
-    //gest->fermerPCDef(*p1);
-    //cout << pdc.size();
+
     return 0;
 
     //return app.exec();
