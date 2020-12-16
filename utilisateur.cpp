@@ -1,5 +1,7 @@
 #include "utilisateur.h"
 
+using namespace std; 
+
 /// @brief Le constructeur par défaut attribue les valeurs passée en paramètre.
 ///
 /// Constructeur de la classe Utilisateur
@@ -7,9 +9,24 @@
 /// @param n nom de l'utilisateur
 /// @param pren prenom de l'utilisateur
 /// @param pc @ref PointDeCollecte aux quels l'utilisateur est abonné
-Utilisateur::Utilisateur(std::string n, std::string pren, std::vector<PointDeCollecte> pc) : nom(n), prenom(pren), pcInscrits(pc), panier(GestionnaireProduits())
+Utilisateur::Utilisateur(string n, string pren, vector<PointDeCollecte> pc, Application app) : nom(n), prenom(pren), pcInscrits(pc), panier(GestionnaireProduits()), goodBasket(app)
 {
 
+}
+
+void Utilisateur::envoyerMessage(Message m) {
+    m.getDestinataire().recevoirMessage(m);
+}
+
+void Utilisateur::removeMessage(Message m) {
+    vector<Message>::iterator pi = msgRecus.begin();
+    while (pi != msgRecus.end()) {
+        if ( (pi->getExpediteur().getNom() != m.getExpediteur().getNom()) && (pi->getLieu() != m.getLieu()) )
+            pi = next(pi);
+        else {
+            msgRecus.erase(pi);  
+        }
+    }
 }
 
 Utilisateur::~Utilisateur() { 

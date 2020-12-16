@@ -29,6 +29,27 @@ PointDeCollecte& Application::getPC(string lieu) {
     return *pc;
 }
 
+/// @brief Fonction qui donne l' @ref Utilisateur si il est présent.
+///
+/// @param nom nom de l' @ref Utilisateur recherché
+///
+/// @return l' @ref Utilisateur si il est présent dans la liste ou un @ref Utilisateur érroné sinon
+Utilisateur& Application::getUtilisateur(string nom) {
+    Utilisateur* usr = new Utilisateur(string("erreur"), string("erreur"), *(new vector<PointDeCollecte>), *this);
+    vector<Utilisateur>::iterator pi = utilisateurs.begin();
+    while (pi != utilisateurs.end()) {
+        if ( pi->getNom() != nom)
+            pi = next(pi);
+        else {
+            delete usr;
+            usr = &*pi;
+            pi = utilisateurs.end();    
+        }
+    }
+    return *usr;
+}
+
 Application::~Application() {
     pcc.clear();
+    utilisateurs.clear();
 }

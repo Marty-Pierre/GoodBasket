@@ -11,7 +11,7 @@ using namespace std;
 /// @param pc Points de collectes aux quels l'utilisateur est abonné
 /// @param pcg Points de collectes que l'utilisateur gère
 
-GestionnairePC::GestionnairePC(string n, std::string pren, vector<PointDeCollecte> pc, vector<PointDeCollecte> pcg) : Utilisateur(n, pren, pc), pcGeres(pcg)
+GestionnairePC::GestionnairePC(string n, std::string pren, vector<PointDeCollecte> pc, vector<PointDeCollecte> pcg, Application app) : Utilisateur(n, pren, pc, app), pcGeres(pcg)
 {
 
 }

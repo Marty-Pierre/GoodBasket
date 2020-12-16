@@ -3,6 +3,9 @@
 
 #include <vector>
 #include "pointdecollecte.h"
+#include "utilisateur.h"
+
+class Utilisateur; 
 
 /** @brief La classe Application.
  ** 
@@ -18,6 +21,7 @@ class Application
 {
 private:
     std::vector<PointDeCollecte> pcc;
+    std::vector<Utilisateur> utilisateurs;
 
 public:
 /// @brief Le constructeur par d�faut.
@@ -30,12 +34,24 @@ public:
     /// @param pc PointDeCollecte un point de collecte a ajouter
     void ajouterPc(PointDeCollecte pc) { pcc.push_back(pc); };
 
+    /// @brief Ajoute un utilisateur a l'application
+    ///
+    /// @param user @ref Utilisateur un utilisateur a ajouter
+    void ajouterUtilisateur(Utilisateur user) { utilisateurs.push_back(user); };
+
    /// @brief Fonction qui donne le @ref PointDeCollecte si il est présent.
    ///
    /// @param lieu nom du @ref PointDeCollecte recherché
    ///
    /// @return le @ref PointDeCollecte si il est présent dans le gestionnaire ou un @ref PointDeCollecte érroné sinon
    PointDeCollecte& getPC(std::string lieu);
+
+   /// @brief Fonction qui donne l' @ref Utilisateur si il est présent.
+   ///
+   /// @param nom nom de l' @ref Utilisateur recherché
+   ///
+   /// @return l' @ref Utilisateur si il est présent dans la liste ou un @ref Utilisateur érroné sinon
+   Utilisateur& getUtilisateur(std::string nom);
    ~Application();
 };
 

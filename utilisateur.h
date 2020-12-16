@@ -5,8 +5,10 @@
 #include "pointdecollecte.h"
 #include "produit.h"
 #include "gestionnaireproduits.h"
+#include "message.h"
+#include "application.h"
 
-class Compte; class GestionnairePlateforme;
+class Compte; class GestionnairePlateforme; class Application;
 
 /** @brief La classe Utilisateur.
  ** 
@@ -23,6 +25,8 @@ protected:
     std::string prenom;
     std::vector<PointDeCollecte> pcInscrits;
     GestionnaireProduits panier;
+    std::vector<Message> msgRecus;
+    Application goodBasket;
 
 public:
     /// @brief Le constructeur par défaut attribue les valeurs passée en paramètre.
@@ -32,7 +36,11 @@ public:
     /// @param n nom de l'utilisateur
     /// @param pren prenom de l'utilisateur
     /// @param pc @ref PointDeCollecte aux quels l'utilisateur est abonné
-    Utilisateur(std::string n, std::string pren, std::vector<PointDeCollecte> pc);
+    Utilisateur(std::string n, std::string pren, std::vector<PointDeCollecte> pc, Application app);
+    std::string getNom() { return nom; };
+    void envoyerMessage(Message m);
+    void recevoirMessage(Message m) { msgRecus.push_back(m); };
+    void removeMessage(Message m);
     ~Utilisateur();
 };
 

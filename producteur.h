@@ -3,7 +3,6 @@
 
 #include <vector>
 #include "utilisateur.h"
-#include "gestionnaireproduits.h"
 
 /** @brief La classe Producteur, hérite de @ref Utilisateur.
  ** 
@@ -16,7 +15,6 @@
 class Producteur : public Utilisateur
 {
 private:
-
     std::vector<PointDeCollecte> pcFournis;
     GestionnaireProduits produitsFournis;
 
@@ -28,7 +26,7 @@ public:
     /// @param n nom de l'utilisateur
     /// @param pren prenom de l'utilisateur
     /// @param pc @ref PointDeCollecte à associé à ce compte
-    Producteur(std::string n, std::string pren, std::vector<PointDeCollecte> pc);
+    Producteur(std::string n, std::string pren, std::vector<PointDeCollecte> pc, Application app);
 
     /// @brief Retire le @ref Produit spécifié dans la liste du gestionnaire.
     ///
@@ -36,6 +34,7 @@ public:
     ///
     /// @return si le @ref Produit à bien été retiré
     bool supprProduit(std::string nomProduit) {produitsFournis.supprProduit(nomProduit);};
+    void repondreMessage(Message m, bool accept);
     ~Producteur();
 };
 
