@@ -28,7 +28,9 @@ HEADERS += application.h \
            pointdecollecte.h \
            producteur.h \
            produit.h \
-           utilisateur.h
+           utilisateur.h \
+           message.h
+
 SOURCES += application.cpp \
            compte.cpp \
            gestionnairepc.cpp \
@@ -38,4 +40,5 @@ SOURCES += application.cpp \
            pointdecollecte.cpp \
            producteur.cpp \
            produit.cpp \
-           utilisateur.cpp 
+           utilisateur.cpp \
+           message.cpp
