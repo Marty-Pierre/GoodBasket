@@ -40,8 +40,20 @@ public:
     ///
     /// @param pc PointDeCollecte le point de collecte a fermer temporairement
     void fermerPCTemp(PointDeCollecte pc) { pc.fermerPCTemp(); };
+
+    /// @brief fonction qui ajoute a un utilisateur la gestion d'un point de controle
+    ///
+    /// @param pc PointDeCollecte le point de collecte a ajouter 
     void encoreDuTravail(PointDeCollecte pc) { pcGeres.push_back(pc); };
+
+    /// @brief fonction qui regarde si c'est un utilisateur
+    ///
+    /// @return true si c'est un utilisateur false sinon 
     bool estUtilisateur() { return false; };
+
+    /// @brief fonction qui regarde si c'est un GestionnairePC
+    ///
+    /// @return true si c'est un gestionnairePC false sinon 
     bool estGestionnairePC() { return true; };
     ~GestionnairePC(); 
 };

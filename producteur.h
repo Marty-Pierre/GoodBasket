@@ -41,7 +41,15 @@ public:
     ///
     ///@return true si il accepte false sinon
     void repondreMessage(Message m, bool accept);
+
+    /// @brief fonction qui regarde si c'est un utilisateur
+    ///
+    /// @return false
     bool estUtilisateur() { return false; };
+
+    /// @brief fonction qui regarde si c'est un Producteur
+    ///
+    /// @return true
     bool estProducteur() { return true; };
     ~Producteur();
 };

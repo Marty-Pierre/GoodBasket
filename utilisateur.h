@@ -38,8 +38,20 @@ public:
     /// @param pren prenom de l'utilisateur
     /// @param pc @ref PointDeCollecte aux quels l'utilisateur est abonné
     Utilisateur(std::string n, std::string pren, std::vector<PointDeCollecte> pc, Application app);
+
+    /// @brief Fonction qui donne le nom de l'utilisateur
+    ///
+    /// @return le nom de l'utilisateur
     std::string getNom() { return nom; };
+
+    /// @brief Fonction qui donne le prenom de l'utilisateur
+    ///
+    /// @return le prenom de l'utilisateur
     std::string getPrenom() { return prenom; };
+
+    /// @brief Fonction qui donne les points de collectes auquel l'utilisateur est inscrit
+    ///
+    /// @return les points de collectes
     std::vector<PointDeCollecte> getPcInscrits() { return pcInscrits; };
     Application* getApp() { return goodBasket; };
 
@@ -57,9 +69,25 @@ public:
     ///
     /// @param m Message le message a supprimer
     void removeMessage(Message m);
+
+    /// @brief fonction qui regarde si c'est un Utilisateur
+    ///
+    /// @return true
     virtual bool estUtilisateur() { return true; };
+
+    /// @brief fonction qui regarde si c'est un Producteur
+    ///
+    /// @return false
     virtual bool estProducteur() { return false; };
+
+    /// @brief fonction qui regarde si c'est un GestionnairePC
+    ///
+    /// @return false
     virtual bool estGestionnairePC() { return false; };
+
+    /// @brief fonction qui regarde si c'est un GestionnairePlateforme
+    ///
+    /// @return false 
     virtual bool estGestionnairePlateforme() { return false; };
     ~Utilisateur();
 };

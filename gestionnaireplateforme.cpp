@@ -14,6 +14,10 @@ GestionnairePlateforme::GestionnairePlateforme(std::string n, std::string pren, 
 
 }
 
+    /// @brief procedure qui permet la création d'un point de controle selon le message envoyer
+    ///
+    /// @param m Message : message transmit
+    /// @param accept bool : "feu vert"
 void GestionnairePlateforme::repondreMessage(Message m, bool accept) {
     if (accept) {
         PointDeCollecte pc = PointDeCollecte(m.getLieu());
