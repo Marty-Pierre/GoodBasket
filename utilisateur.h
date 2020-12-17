@@ -42,7 +42,6 @@ public:
     ///
     /// @return le nom de l'utilisateur
     std::string getNom() { return nom; };
-<<<<<<<<< Temporary merge branch 1
 
     /// @brief Fonction qui donne le prenom de l'utilisateur
     ///
