@@ -36,17 +36,32 @@ PointDeCollecte& Application::getPC(string lieu) {
 /// @return l' @ref Utilisateur si il est présent dans la liste ou un @ref Utilisateur érroné sinon
 Utilisateur& Application::getUtilisateur(string nom) {
     Utilisateur* usr = new Utilisateur(string("erreur"), string("erreur"), *(new vector<PointDeCollecte>), *this);
-    vector<Utilisateur>::iterator pi = utilisateurs.begin();
+    vector<Utilisateur*>::iterator pi = utilisateurs.begin();
     while (pi != utilisateurs.end()) {
-        if ( pi->getNom() != nom)
+        if ( (*pi)->getNom() != nom)
             pi = next(pi);
         else {
             delete usr;
-            usr = &*pi;
+            usr = *pi;
             pi = utilisateurs.end();    
         }
     }
     return *usr;
+}
+
+void Application::promotion(Utilisateur u) {
+    vector<Utilisateur*>::iterator pi = utilisateurs.begin();
+    while (pi != utilisateurs.end()) {
+        if ( (*pi)->getNom() != u.getNom())
+            pi = next(pi);
+        else {
+            Utilisateur* user = *pi;
+            GestionnairePC* gpc = new GestionnairePC(user);
+            utilisateurs.push_back(gpc);
+            utilisateurs.erase(pi);
+            pi = utilisateurs.end();   
+        }
+    }
 }
 
 Application::~Application() {

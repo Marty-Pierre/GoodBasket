@@ -16,6 +16,9 @@ GestionnairePC::GestionnairePC(string n, std::string pren, vector<PointDeCollect
 
 }
 
+GestionnairePC::GestionnairePC(Utilisateur* u) : Utilisateur(u->getNom(), u->getPrenom(), u->getPcInscrits(), u->getApp()), pcGeres() {
+
+}
 /// @brief ferme définitivement un point de collecte en le suppriment 
     ///
     /// @param pc PointDeCollecte le point de collecte a supprimer 

@@ -25,6 +25,7 @@ public:
     Utilisateur getDestinataire() { return destinataire; };
     Utilisateur getExpediteur() { return expediteur; };
     std::string getLieu() { return lieu; };
+    ~Message();
 };
 
 #endif // MESSAGE_H

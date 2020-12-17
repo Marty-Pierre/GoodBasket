@@ -26,7 +26,7 @@ public:
     /// @param pc Points de collectes aux quels l'utilisateur est abonné
     /// @param pcg Points de collectes que l'utilisateur gère
     GestionnairePC(std::string n, std::string pren, std::vector<PointDeCollecte> pc, std::vector<PointDeCollecte> pcg, Application app);
-
+    GestionnairePC(Utilisateur* u);
     /// @brief Change la date du cycle
     ///
     /// @param date date du nouveau cycle 
@@ -41,6 +41,9 @@ public:
     ///
     /// @param pc PointDeCollecte le point de collecte a fermer temporairement
     void fermerPCTemp(PointDeCollecte pc) { pc.fermerPCTemp(); };
+    void encoreDuTravail(PointDeCollecte pc) { pcGeres.push_back(pc); };
+    bool estUtilisateur() { return false; };
+    bool estGestionnairePC() { return true; };
     ~GestionnairePC(); 
 };
 

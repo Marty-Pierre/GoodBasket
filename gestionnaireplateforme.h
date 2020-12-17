@@ -22,6 +22,9 @@ public:
     /// @param pren prenom de l'utilisateur 
     /// @param pc Points de collectes aux quels l'utilisateur est abonné
     GestionnairePlateforme(std::string n, std::string pren, std::vector<PointDeCollecte> pc, Application app);
+    void repondreMessage(Message m, bool accept);
+    bool estUtilisateur() { return false; };
+    bool estGestionnairePlateforme() { return true; };
     ~GestionnairePlateforme();
 };
 

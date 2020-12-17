@@ -34,4 +34,5 @@ Utilisateur::~Utilisateur() {
     delete &prenom;
     pcInscrits.clear();
     delete &panier;
+    msgRecus.clear();
 }

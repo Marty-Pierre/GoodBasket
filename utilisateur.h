@@ -38,9 +38,16 @@ public:
     /// @param pc @ref PointDeCollecte aux quels l'utilisateur est abonné
     Utilisateur(std::string n, std::string pren, std::vector<PointDeCollecte> pc, Application app);
     std::string getNom() { return nom; };
+    std::string getPrenom() { return prenom; };
+    std::vector<PointDeCollecte> getPcInscrits() { return pcInscrits; };
+    Application getApp() { return goodBasket; };
     void envoyerMessage(Message m);
     void recevoirMessage(Message m) { msgRecus.push_back(m); };
     void removeMessage(Message m);
+    virtual bool estUtilisateur() { return true; };
+    virtual bool estProducteur() { return false; };
+    virtual bool estGestionnairePC() { return false; };
+    virtual bool estGestionnairePlateforme() { return false; };
     ~Utilisateur();
 };
 

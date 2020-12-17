@@ -35,6 +35,8 @@ public:
     /// @return si le @ref Produit à bien été retiré
     bool supprProduit(std::string nomProduit) {produitsFournis.supprProduit(nomProduit);};
     void repondreMessage(Message m, bool accept);
+    bool estUtilisateur() { return false; };
+    bool estProducteur() { return true; };
     ~Producteur();
 };
 

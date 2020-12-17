@@ -4,3 +4,8 @@ Message::Message(Utilisateur expe, Utilisateur deste, std::string location, std:
 {
     
 }
+
+Message::~Message() {
+    delete &lieu;
+    delete &message;
+}
