@@ -3,13 +3,11 @@
 
 #include <vector>
 #include "pointdecollecte.h"
-#include "utilisateur.h"
-#include "producteur.h"
 #include "gestionnairepc.h"
 #include "gestionnaireplateforme.h"
+#include "utilisateur.h"
 
-class Utilisateur; 
-
+class Producteur; class GestionnairePC;
 /** @brief La classe Application.
  ** 
  ** Elle contient un constructeur, un point de collecte et 2 m�thodes pour la g�rer :
@@ -40,7 +38,7 @@ public:
     /// @brief Ajoute un utilisateur a l'application
     ///
     /// @param user @ref Utilisateur un utilisateur a ajouter
-    void ajouterUtilisateur(Utilisateur user) { utilisateurs.push_back(&user); };
+    void ajouterUtilisateur(Utilisateur *user) { utilisateurs.push_back(user); };
 
    /// @brief Fonction qui donne le @ref PointDeCollecte si il est présent.
    ///

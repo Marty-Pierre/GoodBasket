@@ -3,7 +3,7 @@
 
 #include <string>
 
-class Utilisateur; class GestionnaireProduits; class PointDeCollecte; class Producteur;
+class GestionnaireProduits; class PointDeCollecte; class Producteur;
 
 /** @brief La classe Produit.
  ** 

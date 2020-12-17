@@ -33,7 +33,7 @@ public:
     /// @param prod @ref Produit à retirer de la liste
     ///
     /// @return si le @ref Produit à bien été retiré
-    bool supprProduit(std::string nomProduit) {produitsFournis.supprProduit(nomProduit);};
+    bool supprProduit(std::string nomProduit) {return produitsFournis.supprProduit(nomProduit);};
 
     /// @brief Fonction qui reponds si le producteur est d'accord d'etre fournisseur
     ///

@@ -4,11 +4,12 @@
 #include <vector>
 #include "pointdecollecte.h"
 #include "produit.h"
-#include "gestionnaireproduits.h"
 #include "message.h"
+#include "gestionnaireproduits.h"
 #include "application.h"
+#include "producteur.h"
 
-class Compte; class GestionnairePlateforme; class Application; class Message;
+class Compte; class GestionnairePlateforme; class Application;class Producteur ; class Message; class GestionnairePC;
 
 /** @brief La classe Utilisateur.
  ** 
@@ -40,7 +41,7 @@ public:
     std::string getNom() { return nom; };
     std::string getPrenom() { return prenom; };
     std::vector<PointDeCollecte> getPcInscrits() { return pcInscrits; };
-    Application getApp() { return goodBasket; };
+    Application* getApp() { return goodBasket; };
 
     /// @brief Fonction qui envoie un @ref Message a un Utilisateur
     ///

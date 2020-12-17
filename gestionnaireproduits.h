@@ -4,7 +4,7 @@
 #include <vector>
 #include "produit.h"
 
-class PointDeCollecte; class Producteur; class Utilisateur;
+class PointDeCollecte; class Producteur;
 
 /** @brief La classe GestionnaireProduits, hérite de Utilisateur.
  ** 

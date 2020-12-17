@@ -5,7 +5,7 @@
 #include "produit.h"
 #include "gestionnaireproduits.h"
 
-class Utilisateur; class GestionnairePC; class Producteur; class Application;
+class Producteur;
 
 /** @brief La classe PointDeCollecte.
  ** 

@@ -2,7 +2,6 @@
 #define GESTIONNAIREPC_H
 
 #include "utilisateur.h"
-#include "pointdecollecte.h"
 
 /** @brief La classe GestionnairePC, hérite de @ref Utilisateur.
  ** 
@@ -30,7 +29,7 @@ public:
     /// @brief Change la date du cycle
     ///
     /// @param date date du nouveau cycle 
-    bool modifyCycle(PointDeCollecte pdc, std::string date) { pdc.setDate(date); };
+    void modifyCycle(PointDeCollecte pdc, std::string date) { pdc.setDate(date); };
 
     /// @brief ferme définitivement un point de collecte en le suppriment 
     ///

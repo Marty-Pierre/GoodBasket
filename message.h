@@ -1,8 +1,8 @@
 #ifndef MESSAGE_H
 #define MESSAGE_H
 
-#include "utilisateur.h"
 
+#include "utilisateur.h"
 class Utilisateur;
 
 /** @brief La classe Message.
@@ -21,7 +21,7 @@ private:
     Utilisateur* destinataire; Utilisateur* expediteur;
 
 public:
-    /// @brief Le constructeur par défaut de la classe Message
+    /// @brief Le constructeur par dï¿½faut de la classe Message
     ///
     /// Constructeur de la classe Message
     /// @param expe Utilisateur expediteur du message
