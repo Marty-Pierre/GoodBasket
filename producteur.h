@@ -34,8 +34,22 @@ public:
     ///
     /// @return si le @ref Produit à bien été retiré
     bool supprProduit(std::string nomProduit) {produitsFournis.supprProduit(nomProduit);};
+
+    /// @brief Fonction qui reponds si le producteur est d'accord d'etre fournisseur
+    ///
+    /// @param m Message le message a supprimer
+    ///
+    ///@return true si il accepte false sinon
     void repondreMessage(Message m, bool accept);
+
+    /// @brief fonction qui regarde si c'est un utilisateur
+    ///
+    /// @return false
     bool estUtilisateur() { return false; };
+
+    /// @brief fonction qui regarde si c'est un Producteur
+    ///
+    /// @return true
     bool estProducteur() { return true; };
     ~Producteur();
 };

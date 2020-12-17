@@ -48,7 +48,9 @@ Utilisateur& Application::getUtilisateur(string nom) {
     }
     return *usr;
 }
-
+    /// @brief Fonction qui permet de faire passer un utilisateur a un GestionnairePC
+    /// 
+    /// @param u Utilisateur l'utilisateur a promouvoir
 void Application::promotion(Utilisateur u) {
     vector<Utilisateur*>::iterator pi = utilisateurs.begin();
     while (pi != utilisateurs.end()) {

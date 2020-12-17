@@ -59,7 +59,8 @@ SOURCES       = application.cpp \
 		pointdecollecte.cpp \
 		producteur.cpp \
 		produit.cpp \
-		utilisateur.cpp 
+		utilisateur.cpp \
+		message.cpp 
 OBJECTS       = application.o \
 		compte.o \
 		gestionnairepc.o \
@@ -69,7 +70,8 @@ OBJECTS       = application.o \
 		pointdecollecte.o \
 		producteur.o \
 		produit.o \
-		utilisateur.o
+		utilisateur.o \
+		message.o
 DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/unix.conf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/linux.conf \
@@ -155,7 +157,8 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		pointdecollecte.h \
 		producteur.h \
 		produit.h \
-		utilisateur.h application.cpp \
+		utilisateur.h \
+		message.h application.cpp \
 		compte.cpp \
 		gestionnairepc.cpp \
 		gestionnaireplateforme.cpp \
@@ -164,7 +167,8 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		pointdecollecte.cpp \
 		producteur.cpp \
 		produit.cpp \
-		utilisateur.cpp
+		utilisateur.cpp \
+		message.cpp
 QMAKE_TARGET  = GoodBasket
 DESTDIR       = 
 TARGET        = GoodBasket
@@ -354,8 +358,8 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents application.h compte.h gestionnairepc.h gestionnaireplateforme.h gestionnaireproduits.h pointdecollecte.h producteur.h produit.h utilisateur.h $(DISTDIR)/
-	$(COPY_FILE) --parents application.cpp compte.cpp gestionnairepc.cpp gestionnaireplateforme.cpp gestionnaireproduits.cpp main.cpp pointdecollecte.cpp producteur.cpp produit.cpp utilisateur.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents application.h compte.h gestionnairepc.h gestionnaireplateforme.h gestionnaireproduits.h pointdecollecte.h producteur.h produit.h utilisateur.h message.h $(DISTDIR)/
+	$(COPY_FILE) --parents application.cpp compte.cpp gestionnairepc.cpp gestionnaireplateforme.cpp gestionnaireproduits.cpp main.cpp pointdecollecte.cpp producteur.cpp produit.cpp utilisateur.cpp message.cpp $(DISTDIR)/
 
 
 clean: compiler_clean 
@@ -406,35 +410,49 @@ compiler_clean: compiler_moc_predefs_clean
 application.o: application.cpp application.h \
 		pointdecollecte.h \
 		produit.h \
-		gestionnaireproduits.h
+		gestionnaireproduits.h \
+		utilisateur.h \
+		message.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o application.o application.cpp
 
 compte.o: compte.cpp compte.h \
 		utilisateur.h \
 		pointdecollecte.h \
 		produit.h \
-		gestionnaireproduits.h
+		gestionnaireproduits.h \
+		message.h \
+		application.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o compte.o compte.cpp
 
 gestionnairepc.o: gestionnairepc.cpp gestionnairepc.h \
 		utilisateur.h \
 		pointdecollecte.h \
 		produit.h \
-		gestionnaireproduits.h
+		gestionnaireproduits.h \
+		message.h \
+		application.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o gestionnairepc.o gestionnairepc.cpp
 
 gestionnaireplateforme.o: gestionnaireplateforme.cpp gestionnaireplateforme.h \
 		utilisateur.h \
 		pointdecollecte.h \
 		produit.h \
-		gestionnaireproduits.h
+		gestionnaireproduits.h \
+		message.h \
+		application.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o gestionnaireplateforme.o gestionnaireplateforme.cpp
 
 gestionnaireproduits.o: gestionnaireproduits.cpp gestionnaireproduits.h \
 		produit.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o gestionnaireproduits.o gestionnaireproduits.cpp
 
-main.o: main.cpp 
+main.o: main.cpp gestionnairepc.h \
+		utilisateur.h \
+		pointdecollecte.h \
+		produit.h \
+		gestionnaireproduits.h \
+		message.h \
+		application.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o main.cpp
 
 pointdecollecte.o: pointdecollecte.cpp pointdecollecte.h \
@@ -446,7 +464,9 @@ producteur.o: producteur.cpp producteur.h \
 		utilisateur.h \
 		pointdecollecte.h \
 		produit.h \
-		gestionnaireproduits.h
+		gestionnaireproduits.h \
+		message.h \
+		application.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o producteur.o producteur.cpp
 
 produit.o: produit.cpp produit.h
@@ -455,8 +475,18 @@ produit.o: produit.cpp produit.h
 utilisateur.o: utilisateur.cpp utilisateur.h \
 		pointdecollecte.h \
 		produit.h \
-		gestionnaireproduits.h
+		gestionnaireproduits.h \
+		message.h \
+		application.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o utilisateur.o utilisateur.cpp
+
+message.o: message.cpp message.h \
+		utilisateur.h \
+		pointdecollecte.h \
+		produit.h \
+		gestionnaireproduits.h \
+		application.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o message.o message.cpp
 
 ####### Install
 

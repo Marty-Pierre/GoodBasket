@@ -22,8 +22,21 @@ public:
     /// @param pren prenom de l'utilisateur 
     /// @param pc Points de collectes aux quels l'utilisateur est abonné
     GestionnairePlateforme(std::string n, std::string pren, std::vector<PointDeCollecte> pc, Application app);
+
+    /// @brief procedure qui permet la création d'un point de controle selon le message envoyer
+    ///
+    /// @param m Message : message transmit
+    /// @param accept bool : "feu vert"
     void repondreMessage(Message m, bool accept);
+
+    /// @brief fonction qui regarde si c'est un utilisateur
+    ///
+    /// @return true si c'est un utilisateur false sinon 
     bool estUtilisateur() { return false; };
+
+    /// @brief fonction qui regarde si c'est un GestionnairePlateforme
+    ///
+    /// @return true si c'est un GestionnairePlateforme false sinon
     bool estGestionnairePlateforme() { return true; };
     ~GestionnairePlateforme();
 };

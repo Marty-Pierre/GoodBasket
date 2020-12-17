@@ -22,7 +22,6 @@ GestionnairePC::GestionnairePC(Utilisateur* u) : Utilisateur(u->getNom(), u->get
 /// @brief ferme définitivement un point de collecte en le suppriment 
     ///
     /// @param pc PointDeCollecte le point de collecte a supprimer 
-
 void GestionnairePC::fermerPCDef(PointDeCollecte pc) {
     vector<PointDeCollecte>::iterator pi = pcGeres.begin();
     while (pi != pcGeres.end()) {

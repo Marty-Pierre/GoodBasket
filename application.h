@@ -55,6 +55,10 @@ public:
    ///
    /// @return l' @ref Utilisateur si il est présent dans la liste ou un @ref Utilisateur érroné sinon
    Utilisateur& getUtilisateur(std::string nom);
+
+   /// @brief Fonction qui permet de faire passer un utilisateur a un GestionnairePC
+   /// 
+   /// @param u Utilisateur l'utilisateur a promouvoir
    void promotion(Utilisateur u);
    ~Application();
 };
